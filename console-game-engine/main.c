@@ -11,7 +11,7 @@ int main()
     CreateMap();
     Render();
     Set(pos[0], pos[1], character);
-    
+
     while (1)
     {
         char c = getch();
@@ -38,7 +38,7 @@ int main()
                 break;
 
             case 'd':
-                if (pos[0] <  x - 1)
+                if (pos[0] < x - 1)
                     pos[0]++;
                 break;
 
@@ -48,7 +48,7 @@ int main()
                 break;
 
             case 's':
-                if (pos[1] <  y - 1)
+                if (pos[1] < y - 1)
                     pos[1]++;
                 break;
 
