@@ -14,7 +14,10 @@
         "xiosbase": "c",
         "xstring": "c",
         "io.h": "c",
-        "string.h": "c"
+        "string.h": "c",
+        "tuple": "c",
+        "utility": "c",
+        "conio.h": "c"
     },
     "C_Cpp.dimInactiveRegions": false
 }
