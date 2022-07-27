@@ -1,0 +1,20 @@
+{
+    "files.associations": {
+        "sapphire.h": "c",
+        "stdbool.h": "c",
+        "math.h": "c",
+        "windows.h": "c",
+        "cmath": "c",
+        "cstdlib": "c",
+        "stdio.h": "c",
+        "stdlib.h": "c",
+        "atomic": "c",
+        "ios": "c",
+        "system_error": "c",
+        "xiosbase": "c",
+        "xstring": "c",
+        "io.h": "c",
+        "string.h": "c"
+    },
+    "C_Cpp.dimInactiveRegions": false
+}
