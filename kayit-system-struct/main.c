@@ -1,18 +1,20 @@
 #include <stdio.h>
 #include <string.h>
+#define mevcut 20
+#define RAND_MAX 32767
 struct ogrenci
 {
     char *ad;
     int not ;
 };
 
-struct ogrenci ogrenciler[20];
+struct ogrenci ogrenciler[mevcut];
 int sonNumara = 0;
-int main()
+int kytsys()
 {
 
     int islem;
-    printf("* Yapmam icin bir islem secsene\n1- kayit\n2- goruntule\n3- herkesi goruntule");
+    printf("\nYapmam icin bir islem secsene\n1- kayit\n2- goruntule\n3- herkesi goruntule\n4- cik\n>>> ");
     scanf("%d", &islem);
     switch (islem)
     {
@@ -20,27 +22,50 @@ int main()
     {
         struct ogrenci yeniOgrenci;
         char isim[20];
-        printf("Kayit icin ismini yaz:    ");
+        printf("Kayit icin ismini yaz:\n>>> ");
         scanf("%s", isim);
         char *ad = isim;
-        printf("\nAdin:%s", ad);
         yeniOgrenci.ad = ad;
+        yeniOgrenci.not = (int)(((double)rand() / RAND_MAX) * (100 - 1) + 1);
+        printf("%d",sonNumara);
+        ogrenciler[sonNumara++] = yeniOgrenci;
+         printf("\nKayit basarili! Adin: %s\n", ad);
+        return 0;
 
-        ogrenciler[sonNumara] = yeniOgrenci;
         break;
     }
     case 2:
     {
+        int kim;
+        printf("\nOgrenci Numarani Gir:\n>>> ");
+        scanf("%d", &kim);
 
-        break;
+        struct ogrenci eskiOgrenci = ogrenciler[kim];
+
+        printf("\nAdin: %s\nNotun: %d", eskiOgrenci.ad, eskiOgrenci.not );
+        return 0;
     }
-        case 3:
+    case 3:
     {
+        for (int i = 0; i < sonNumara  ; i++)
+        
+             printf("\nNumara: %d\nAdin: %s\nNotun: %d", i, ogrenciler[i].ad, ogrenciler[i].not );
+         
 
-        break;
+        return 0;
+    }
+    case 4:
+    {
+        return 1;
     }
     default:
         printf("Bizde boyle bir islem yok ki!");
-        break;
+        return 0;
     }
+}
+
+int main()
+{
+    while (!kytsys())
+        ;
 }
