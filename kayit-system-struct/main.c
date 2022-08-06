@@ -4,7 +4,7 @@
 #define RAND_MAX 32767
 struct ogrenci
 {
-    char *ad;
+    char ad[20];
     int not ;
 };
 
@@ -24,12 +24,13 @@ int kytsys()
         char isim[20];
         printf("Kayit icin ismini yaz:\n>>> ");
         scanf("%s", isim);
-        char *ad = isim;
-        yeniOgrenci.ad = ad;
+
+        strcpy(yeniOgrenci.ad, isim);
         yeniOgrenci.not = (int)(((double)rand() / RAND_MAX) * (100 - 1) + 1);
-        printf("%d",sonNumara);
+        printf("%d", sonNumara);
         ogrenciler[sonNumara++] = yeniOgrenci;
-         printf("\nKayit basarili! Adin: %s\n", ad);
+
+        printf("\nKayit basarili! Adin: %s\n", isim);
         return 0;
 
         break;
@@ -47,10 +48,9 @@ int kytsys()
     }
     case 3:
     {
-        for (int i = 0; i < sonNumara  ; i++)
-        
-             printf("\nNumara: %d\nAdin: %s\nNotun: %d", i, ogrenciler[i].ad, ogrenciler[i].not );
-         
+        for (int i = 0; i < sonNumara; i++)
+
+            printf("\nNumara: %d\nAdin: %s\nNotun: %d", i, ogrenciler[i].ad, ogrenciler[i].not );
 
         return 0;
     }
