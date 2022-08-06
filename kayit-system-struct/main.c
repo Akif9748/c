@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 #define mevcut 20
-#define RAND_MAX 32767
+
 struct ogrenci
 {
     char ad[20];
